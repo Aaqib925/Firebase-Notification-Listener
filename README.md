@@ -1,4 +1,4 @@
-# Simple Simple Tool for testing your firebase Client Side push notifications 🚀🚀
+# Simple Tool for testing your firebase Client Side push notifications 🚀🚀
  Checkout demo at [HERE 🚀](https://interninators-listener.surge.sh/)
 
 # Getting Started with Create React App
