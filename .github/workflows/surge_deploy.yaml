@@ -11,8 +11,8 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2-beta
         with:
-          node-version: 14
+          node-version: 12
       - name: Install Surge
         run: npm install -g surge
       - name: Run surge
-        run: surge ./ interninators-listener.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+        run: surge ./interninators-listener.surge.sh --token ${{ secrets.SURGE_TOKEN }}
