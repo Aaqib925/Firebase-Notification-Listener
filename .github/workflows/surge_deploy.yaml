@@ -24,4 +24,4 @@ jobs:
         run: npm install -g surge
 
       - name: Deploy to Surge
-        run: surge ./build http://interninators-listener.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
+        run: surge ./build https://interninators-listener.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
