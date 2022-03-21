@@ -18,7 +18,7 @@ const RightContainer = () => {
 
     useEffect(() => {
         prepareAndInitializeFirebase();
-        navigator.serviceWorker.register('firebase-messaging-sw.js');
+        // navigator.serviceWorker.register('firebase-messaging-sw.js');
     }, []);
 
 
