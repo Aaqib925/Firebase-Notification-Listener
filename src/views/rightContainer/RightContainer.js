@@ -18,6 +18,7 @@ const RightContainer = () => {
 
     useEffect(() => {
         prepareAndInitializeFirebase();
+        navigator.serviceWorker.register('firebase-messaging-sw.js');
     }, []);
 
 
@@ -88,6 +89,24 @@ const RightContainer = () => {
         onMessage(messaging, (payload) => {
             setNotification({ title: payload?.data?.title, body: payload?.data?.body });
         });
+        handleSendDataToServiceWorker(keys)
+    }
+
+    const handleSendDataToServiceWorker = (keys) => {
+        if (navigator.serviceWorker) {
+
+            // navigator.serviceWorker.register('firebase-messaging-sw.js');
+
+            navigator.serviceWorker.addEventListener('message', event => {
+                // event is a MessageEvent object
+                console.log(`The service worker sent me a message: ${event.data}`);
+            });
+
+            navigator.serviceWorker.ready.then(registration => {
+                registration.active.postMessage(JSON.stringify(keys));
+            });
+
+        }
     }
 
     const requestForToken = (messaging, vapidKey) => {
