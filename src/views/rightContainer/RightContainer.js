@@ -89,7 +89,7 @@ const RightContainer = () => {
         onMessage(messaging, (payload) => {
             setNotification({ title: payload?.data?.title, body: payload?.data?.body });
         });
-        handleSendDataToServiceWorker(keys)
+        // handleSendDataToServiceWorker(keys)
     }
 
     const handleSendDataToServiceWorker = (keys) => {
